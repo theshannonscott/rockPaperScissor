@@ -1,4 +1,4 @@
-alert("Lets play Rock, Paper, Scissors! (Game is Best of Five) \nType answer exactly as shown")
+alert("Lets play Rock, Paper, Scissors! (Game is Best of Five) \nType answer exactly as shown...")
 
 let playerScore = 0;
 let computerScore = 0;
@@ -113,7 +113,7 @@ switch (compChoice){
 
 compare(playerChoice, compChoice);
 
-let winner = (playerScore > computerScore) ? `Player Wins: Player's Score = ${playerScore}`: (playerScore > computerScore) ? `Computer wins: Computer's Score = ${computerScore}`:
+let winner = (playerScore > computerScore) ? `Player Wins: Player's Score = ${playerScore}`: (playerScore < computerScore) ? `Computer wins: Computer's Score = ${computerScore}`:
 `It's a tie! \nPlayer's Score = ${playerScore} \nComputer's Score = ${computerScore}`;
 
 alert(winner)
