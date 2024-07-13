@@ -1,42 +1,64 @@
 alert("Lets play Rock, Paper, Scissors! (Game is Best of Five) \nType answer exactly as shown...")
 
-let playerScore = 0;
-let computerScore = 0;
+/*let newPlayer.score = 0;
+let computer.score = 0;*/
 
-alert (`SCORE \nPlayer's Score =  ${playerScore}\nComputer's Score = ${computerScore}`)
+class player{
+  constructor(
+    score,
+    choice,
+    )
+    {
+      this.score = score;
+      this.choice = choice;
+      this.getPlayerChoice = function()
+      {this.choice = prompt ("Rock, Paper, or Scissors?");
+      return this.choice.toLowerCase()};
+      this.getComputerChoice = function(answer){
+        this.choice= Math.floor(Math.random() * answer); 
+        switch (this.choice){
+          case 0:
+            this.choice = "rock"
+              break;
+              case 1:
+                  this.choice = "paper";
+                  break;
+                  case 2:
+                    this.choice = "scissors";
+                      break;
+        }
+        return this.choice
+      }
+    }
+}
+
+const newPlayer = new player(0, "none");
+const computer = new player (0, "none");
+
+
+alert (`SCORE \nPlayer's Score =  ${newPlayer.score}\nComputer's Score = ${computer.score}`)
+
+
+function playRound (){{if (newPlayer.choice === computer.choice){alert (`It's a tie!!! \nPlayer's choice = ${newPlayer.choice} \nComputer's choice = ${computer.choice}`); computer.score = computer.score + 1; newPlayer.score = newPlayer.score + 1;}
+else if (newPlayer.choice === "rock" && computer.choice === "scissors") {alert (`Player wins!!! \nPlayer's choice = ${newPlayer.choice} \nComputer's choice = ${computer.choice}`); newPlayer.score = newPlayer.score + 1;}
+else if(newPlayer.choice === "rock" && computer.choice === "paper"){alert(`Computer wins!!! \nPlayer's choice = ${newPlayer.choice} \nComputer's choice = ${computer.choice}`); computer.score = computer.score + 1;}
+else if (newPlayer.choice === "paper" && computer.choice === "scissors"){alert(`Computer wins!!! \nPlayer's choice = ${newPlayer.choice} \nComputer's choice = ${computer.choice}`); computer.score = computer.score + 1;} 
+else if(newPlayer.choice === "paper" && computer.choice === "rock"){alert(`Player wins!!! \nPlayer's choice = ${newPlayer.choice} \nComputer's choice = ${computer.choice}`); newPlayer.score = newPlayer.score + 1;}
+else if (newPlayer.choice=== "scissors" && computer.choice === "paper"){alert(`Player wins!!! \nPlayer's choice = ${newPlayer.choice} \nComputer's choice = ${computer.choice}`); newPlayer.score = newPlayer.score + 1;}
+else if(newPlayer.choice === "scissors" && computer.choice === "rock"){alert(`Computer wins!!! \nPlayer's choice = ${newPlayer.choice} \nComputer's choice = ${computer.choice}`); computer.score = computer.score + 1;} alert(`Next Round`);}}
+
+newPlayer.getPlayerChoice();
+computer.getComputerChoice(3);
 
 
 
-function getComputerChoice(choice){
-  let answer= Math.floor(Math.random() * choice); 
-  switch (answer){
-    case 0:
-      answer = "rock"
-        break;
-        case 1:
-            answer = "paper";
-            break;
-            case 2:
-                answer = "scissors";
-                break;
-  }
-  return answer
-};
 
-function getPlayerChoice(){
- let choice = prompt ("Rock, Paper, or Scissors?");
-return choice.toLowerCase()};
+/*let winner = (newPlayer.score > computer.score) ? `Player Wins: \nPlayer's Score = ${newPlayer.score}`: (newPlayer.score < computer.score) ? `Computer wins: \nComputer's Score = ${computer.score}`:
+`It's a tie! \nPlayer's Score = ${newPlayer.score} \nComputer's Score = ${computer.score}`;
 
-const playerChoice = getPlayerChoice();
-const compChoice = getComputerChoice(3);
+alert(winner)
+console.log(winner)
+alert("Inspect Browser Console for Score!")
 
-function round()
-  {if (playerChoice === compChoice){alert (`It's a tie!!! \nPlayer's choice = ${playerChoice} \nComputer's choice = ${compChoice}`); computerScore = computerScore + 1; playerScore = playerScore + 1;}
-else if (playerChoice === "rock" && compChoice === "scissors") {alert (`Player wins!!! \nPlayer's choice = ${playerChoice} \nComputer's choice = ${compChoice}`); playerScore = playerScore + 1;}
-else if(playerChoice === "rock" && compChoice === "paper"){alert(`Computer wins!!! \nPlayer's choice = ${playerChoice} \nComputer's choice = ${compChoice}`); computerScore = computerScore + 1;}
-else if (playerChoice === "paper" && compChoice === "scissors"){alert(`Computer wins!!! \nPlayer's choice = ${playerChoice} \nComputer's choice = ${compChoice}`); computerScore = computerScore + 1;} 
-else if(playerChoice === "paper" && compChoice === "rock"){alert(`Player wins!!! \nPlayer's choice = ${playerChoice} \nComputer's choice = ${compChoice}`); playerScore = playerScore + 1;}
-else if (playerChoice === "scissors" && compChoice === "paper"){alert(`Player wins!!! \nPlayer's choice = ${playerChoice} \nComputer's choice = ${compChoice}`); playerScore = playerScore + 1;}
-else if(playerChoice === "scissors" && compChoice === "rock"){alert(`Computer wins!!! \nPlayer's choice = ${playerChoice} \nComputer's choice = ${compChoice}`); computerScore = computerScore + 1;} alert(`Next Round`);}
-
-round(playerChoice, compChoice)
+console.log(`Player's Score =  ${newPlayer.score}`);
+console.log(`Computer's Score = ${computer.score}`);*/
