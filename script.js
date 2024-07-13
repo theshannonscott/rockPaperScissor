@@ -1,8 +1,5 @@
 alert("Lets play Rock, Paper, Scissors! (Game is Best of Five) \nType answer exactly as shown...")
 
-/*let newPlayer.score = 0;
-let computer.score = 0;*/
-
 class player{
   constructor(
     score,
@@ -47,13 +44,33 @@ else if(newPlayer.choice === "paper" && computer.choice === "rock"){alert(`Playe
 else if (newPlayer.choice=== "scissors" && computer.choice === "paper"){alert(`Player wins!!! \nPlayer's choice = ${newPlayer.choice} \nComputer's choice = ${computer.choice}`); newPlayer.score = newPlayer.score + 1;}
 else if(newPlayer.choice === "scissors" && computer.choice === "rock"){alert(`Computer wins!!! \nPlayer's choice = ${newPlayer.choice} \nComputer's choice = ${computer.choice}`); computer.score = computer.score + 1;} alert(`Next Round`);}}
 
+/* First Round */
 newPlayer.getPlayerChoice();
 computer.getComputerChoice(3);
+playRound(newPlayer.choice, computer.choice);
+
+/* Seconf Round */
+newPlayer.getPlayerChoice();
+computer.getComputerChoice(3);
+playRound(newPlayer.choice, computer.choice);
+
+/* Third Round */
+newPlayer.getPlayerChoice();
+computer.getComputerChoice(3);
+playRound(newPlayer.choice, computer.choice);
+
+/* Fourth Round */
+newPlayer.getPlayerChoice();
+computer.getComputerChoice(3);
+playRound(newPlayer.choice, computer.choice);
+
+/* Fifth Round */
+newPlayer.getPlayerChoice();
+computer.getComputerChoice(3);
+playRound(newPlayer.choice, computer.choice);
 
 
-
-
-/*let winner = (newPlayer.score > computer.score) ? `Player Wins: \nPlayer's Score = ${newPlayer.score}`: (newPlayer.score < computer.score) ? `Computer wins: \nComputer's Score = ${computer.score}`:
+let winner = (newPlayer.score > computer.score) ? `Player Wins: \nPlayer's Score = ${newPlayer.score}`: (newPlayer.score < computer.score) ? `Computer wins: \nComputer's Score = ${computer.score}`:
 `It's a tie! \nPlayer's Score = ${newPlayer.score} \nComputer's Score = ${computer.score}`;
 
 alert(winner)
@@ -61,4 +78,4 @@ console.log(winner)
 alert("Inspect Browser Console for Score!")
 
 console.log(`Player's Score =  ${newPlayer.score}`);
-console.log(`Computer's Score = ${computer.score}`);*/
+console.log(`Computer's Score = ${computer.score}`);
